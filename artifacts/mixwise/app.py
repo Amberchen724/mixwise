@@ -10,6 +10,10 @@ from sklearn.metrics import r2_score
 from scipy import stats
 import io
 
+# Compatibility: st.rerun() added in 1.22; fall back to experimental_rerun for older versions
+if not hasattr(st, "rerun"):
+    st.rerun = st.experimental_rerun
+
 # ──────────────────────────────────────────────────────────────────────────────
 # PAGE CONFIG
 # ──────────────────────────────────────────────────────────────────────────────
