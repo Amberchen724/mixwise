@@ -15,19 +15,36 @@ A web app for Marketing Mix Modeling (MMM) built with Streamlit and Python.
 ### Requirements
 - Python 3.11+
 
-### Install dependencies
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Amberchen724/mixwise.git
+cd mixwise
+```
+
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the app
+### 3. Run the app
 
+**Option A — launcher script (recommended):**
 ```bash
-streamlit run artifacts/mixwise/app.py
+python run.py
 ```
 
-The app will open at `http://localhost:8501` in your browser.
+**Option B — direct command:**
+```bash
+python -m streamlit run artifacts/mixwise/app.py
+```
+
+The app opens at **http://localhost:8501** in your browser.
+
+> **Note:** Use `python -m streamlit run` rather than just `streamlit run` to avoid PATH issues on some systems.
+
+---
 
 ## Data Format
 
@@ -44,7 +61,7 @@ Upload a CSV with weekly marketing data. Expected columns:
 | `promo_flag` | 1 if promotional week, 0 otherwise (optional) |
 | `seasonality_index` | Seasonal index 0–1 (optional) |
 
-If no file is uploaded, the app loads a built-in 104-week synthetic demo dataset.
+If no file is uploaded, the app loads a built-in 104-week synthetic demo dataset automatically.
 
 ## Tier Detection
 
